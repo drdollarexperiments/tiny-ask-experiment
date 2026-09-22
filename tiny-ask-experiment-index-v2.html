@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="The Tiny Ask Experiment: a small independent experiment about wealth, tiny requests, and participation." />
+  <title>The Tiny Ask Experiment</title>
+  <style>
+    :root{
+      --bg:#f6f7f9; --card:#ffffff; --text:#15171a; --muted:#606773;
+      --border:#e2e6ea; --accent:#1f5eff; --accent2:#1749c6;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+    .wrap{max-width:820px;margin:0 auto;padding:36px 18px 64px}
+    .badge{
+      display:inline-block;
+      padding:6px 10px;
+      border:1px solid var(--border);
+      border-radius:999px;
+      background:#fff;
+      color:var(--muted);
+      font-size:.88rem;
+    }
+    h1{
+      font-size:clamp(2.2rem,7vw,4.2rem);
+      line-height:1.02;
+      letter-spacing:-.05em;
+      margin:20px 0 16px
+    }
+    .lead{font-size:1.18rem;color:var(--muted);max-width:700px}
+    .card{
+      margin-top:28px;
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:20px;
+      padding:26px;
+      box-shadow:0 10px 30px rgba(0,0,0,.04)
+    }
+    .amount{
+      font-size:clamp(3rem,12vw,6rem);
+      font-weight:800;
+      letter-spacing:-.06em;
+      margin:8px 0
+    }
+    .eyebrow{
+      font-size:.82rem;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      color:var(--muted);
+      font-weight:700
+    }
+    .button{
+      display:inline-block;
+      margin-top:14px;
+      background:var(--accent);
+      color:#fff;
+      text-decoration:none;
+      padding:14px 20px;
+      border-radius:12px;
+      font-weight:750
+    }
+    .button:hover{background:var(--accent2)}
+    .fine{font-size:.88rem;color:var(--muted)}
+    h2{margin-top:34px;font-size:1.45rem}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .mini{padding:18px;border:1px solid var(--border);border-radius:14px;background:#fff}
+    footer{
+      margin-top:44px;
+      color:var(--muted);
+      font-size:.85rem;
+      border-top:1px solid var(--border);
+      padding-top:20px
+    }
+    @media(max-width:640px){.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <span class="badge">Independent personal experiment</span>
+
+    <h1>The Tiny Ask Experiment</h1>
+
+    <p class="lead">
+      What happens when people with substantial publicly reported wealth are asked for a deliberately tiny amount of money?
+      This project is testing that question with requests between $1 and $10.
+    </p>
+
+    <section class="card" aria-labelledby="your-ask">
+      <div class="eyebrow" id="your-ask">Your assigned request</div>
+      <div class="amount" id="amount">$1</div>
+
+      <p>
+        That's genuinely the whole ask. There is no investment pitch, product, membership, or charity claim.
+        Participation is completely optional.
+      </p>
+
+      <a class="button" id="payButton" href="https://www.paypal.com/ncp/payment/K6UJQZ38R6DPA" rel="noopener">
+        Participate with $1
+      </a>
+
+      <p class="fine" id="participantLine"></p>
+    </section>
+
+    <h2>What is being tested?</h2>
+
+    <div class="grid">
+      <div class="mini">
+        <strong>Request size</strong>
+        <p class="fine">Participants are assigned requests of $1, $2, $5, or $10.</p>
+      </div>
+
+      <div class="mini">
+        <strong>Participation</strong>
+        <p class="fine">The experiment compares how often people choose to participate at different request sizes.</p>
+      </div>
+
+      <div class="mini">
+        <strong>Wealth ranges</strong>
+        <p class="fine">Publicly available estimates are used to place prospects into broad wealth ranges for aggregate analysis.</p>
+      </div>
+
+      <div class="mini">
+        <strong>Aggregate results</strong>
+        <p class="fine">The goal is to report patterns, not publicly identify or shame people who decline.</p>
+      </div>
+    </div>
+
+    <h2>Where does the money go?</h2>
+    <p>
+      Money received first offsets the direct costs of running the experiment. Any remaining proceeds belong to the project creator.
+      There is no hidden charitable cause behind the request—the experiment itself is the point.
+    </p>
+
+    <h2>What this is not</h2>
+    <p>
+      This is not a charity, nonprofit fundraiser, academic study, investment opportunity, or claim of financial hardship.
+      It is an independent personal experiment about responses to unusually small financial requests.
+    </p>
+
+    <h2>Privacy</h2>
+    <p>
+      Individual participation will not be publicly attributed without permission. This page does not use advertising trackers
+      or collect information through a form. Payment processing is handled by PayPal.
+    </p>
+
+    <h2>Why was I contacted?</h2>
+    <p>
+      Prospects are selected using publicly available information indicating substantial estimated net worth and a legitimate
+      public or professional contact route. No hacked, leaked, or private contact database is used.
+    </p>
+
+    <footer>
+      The Tiny Ask Experiment · Independent personal project · Participation is voluntary.
+    </footer>
+  </main>
+
+  <script>
+    const PAYMENT_LINKS = {
+      "1": "https://www.paypal.com/ncp/payment/K6UJQZ38R6DPA",
+      "2": "https://www.paypal.com/ncp/payment/HRC9TY59Y73GU",
+      "5": "https://www.paypal.com/ncp/payment/FGMC2AG5J3CUC",
+      "10": "https://www.paypal.com/ncp/payment/29AAAJYARDVYW"
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const allowed = ["1","2","5","10"];
+    const amount = allowed.includes(params.get("amount")) ? params.get("amount") : "1";
+    const participant = (params.get("id") || "")
+      .replace(/[^A-Za-z0-9_-]/g, "")
+      .slice(0, 30);
+
+    document.getElementById("amount").textContent = "$" + amount;
+
+    if (participant) {
+      document.getElementById("participantLine").textContent = "Experiment ID: " + participant;
+    }
+
+    const button = document.getElementById("payButton");
+    button.href = PAYMENT_LINKS[amount];
+    button.textContent = "Participate with $" + amount;
+  </script>
+</body>
+</html>
